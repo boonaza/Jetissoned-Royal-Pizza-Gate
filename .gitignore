@@ -1,0 +1,29 @@
+# Created by https://www.gitignore.io/api/git,godot
+# Edit at https://www.gitignore.io/?templates=git,godot
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+### Godot ###
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+
+# End of https://www.gitignore.io/api/git,godot
