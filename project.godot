@@ -21,8 +21,8 @@ config/icon="res://images/icon.png"
 
 [autoload]
 
-PlayerVars="*res://PlayerVars.gd"
-Global="*res://Global.tscn"
+PlayerVars="*res://scripts/PlayerVars.gd"
+Global="*res://scenes/Global.tscn"
 
 [display]
 

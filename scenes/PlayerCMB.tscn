@@ -2,9 +2,10 @@
 
 [ext_resource path="res://PlayerCMB.gd" type="Script" id=1]
 [ext_resource path="res://archer2.png" type="Texture" id=2]
-[ext_resource path="res://ATK.tres" type="Animation" id=3]
-[ext_resource path="res://DEF.tres" type="Animation" id=4]
+[ext_resource path="res://images/ATK.tres" type="Animation" id=3]
+[ext_resource path="res://images/DEF.tres" type="Animation" id=4]
 [ext_resource path="res://idle.tres" type="Animation" id=5]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "FLEE"

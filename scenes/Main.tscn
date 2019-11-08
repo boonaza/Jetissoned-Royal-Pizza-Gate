@@ -9,4 +9,4 @@
 position = Vector2( 0, -0.214638 )
 
 [node name="PlayerOverworld" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88.6593, 84.9629 )
+position = Vector2( 75.5512, 62.3217 )

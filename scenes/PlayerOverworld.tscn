@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/PlayerOverworld.gd" type="Script" id=1]
-[ext_resource path="res://images/archer2.png" type="Texture" id=2]
-[ext_resource path="res://images/animations/idle.tres" type="Animation" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.28079, 11.1777 )
+[ext_resource path="res://images/animations/PEast.tres" type="Animation" id=2]
+[ext_resource path="res://images/animations/PIdle.tres" type="Animation" id=3]
+[ext_resource path="res://images/animations/PNorth.tres" type="Animation" id=4]
+[ext_resource path="res://images/animations/PSouth.tres" type="Animation" id=5]
+[ext_resource path="res://images/animations/PWest.tres" type="Animation" id=6]
+[ext_resource path="res://images/animations/idle.tres" type="Animation" id=7]
+[ext_resource path="res://images/archerWalk.png" type="Texture" id=8]
 
 [node name="PlayerOverworld" type="KinematicBody2D"]
-position = Vector2( 80.5345, 94.2682 )
+position = Vector2( 65.9753, 130.37 )
 collision_layer = 2
 collision_mask = 29
 script = ExtResource( 1 )
@@ -16,18 +18,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-hframes = 3
-frame = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
-anims/walk = ExtResource( 3 )
+anims/PEast = ExtResource( 2 )
+anims/PIdle = ExtResource( 3 )
+anims/PNorth = ExtResource( 4 )
+anims/PSouth = ExtResource( 5 )
+anims/PWest = ExtResource( 6 )
+anims/walk = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -5.39604, -4.94638 )
+polygon = PoolVector2Array( -1.85417, 4.57026, 7.03473, 4.96532, 7.80789, 11.3282, 0.104202, 12.1184 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="walk" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+vframes = 5
+hframes = 4
+frame = 15
