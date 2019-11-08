@@ -16,8 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="JetisonedRoyalPizzaGate"
-run/main_scene="res://scenes/Tilemapping.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://images/icon.png"
+
+[display]
+
+window/size/width=480
+window/size/height=270
+window/size/test_width=960
+window/size/test_height=540
 
 [input]
 
@@ -48,4 +55,5 @@ west={
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://images/animations/default_env.tres"
