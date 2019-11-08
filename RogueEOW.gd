@@ -13,6 +13,12 @@ func _physics_process(delta):
 	if ColNfo:
 		MoSp = MoSp.bounce(ColNfo.normal)
 		if(ColNfo.collider.name == "PlayerOverworld"):
+			Encounter(ColNfo)
+
+func Encounter(var CollInfo):
+			print("Oh no!  You have been attacked by a Bandit!")
+			Global.Store_Position(CollInfo.collider.get_position(),get_position())
+			print(CollInfo.collider.get_position(), " ", get_position())
 			get_tree().change_scene("res://Encounter.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

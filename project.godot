@@ -19,6 +19,11 @@ config/name="JetisonedRoyalPizzaGate"
 run/main_scene="res://Tilemapping.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerVars="*res://PlayerVars.gd"
+Global="*res://Global.tscn"
+
 [input]
 
 north={
