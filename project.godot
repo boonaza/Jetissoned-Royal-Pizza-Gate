@@ -19,17 +19,17 @@ config/name="JetisonedRoyalPizzaGate"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://images/icon.png"
 
+[autoload]
+
+PlayerVars="*res://PlayerVars.gd"
+Global="*res://Global.tscn"
+
 [display]
 
 window/size/width=480
 window/size/height=270
 window/size/test_width=960
 window/size/test_height=540
-
-[autoload]
-
-PlayerVars="*res://PlayerVars.gd"
-Global="*res://Global.tscn"
 
 [input]
 
