@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tilemapping.gd" type="Script" id=1]
 [ext_resource path="res://Castle Dark.png" type="Texture" id=2]
 [ext_resource path="res://PlayerOverworld.gd" type="Script" id=3]
-[ext_resource path="res://archer2.png" type="Texture" id=4]
-[ext_resource path="res://idle.tres" type="Animation" id=5]
-[ext_resource path="res://RogueEOW.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PEast.tres" type="Animation" id=4]
+[ext_resource path="res://PIdle.tres" type="Animation" id=5]
+[ext_resource path="res://PNorth.tres" type="Animation" id=6]
+[ext_resource path="res://PSouth.tres" type="Animation" id=7]
+[ext_resource path="res://PWest.tres" type="Animation" id=8]
+[ext_resource path="res://idle.tres" type="Animation" id=9]
+[ext_resource path="res://archerWalk.png" type="Texture" id=10]
+[ext_resource path="res://RogueEOW.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -111,23 +116,29 @@ collision_layer = 2
 collision_mask = 29
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="PlayerOverworld"]
-position = Vector2( 7.30864, -8.69136 )
-texture = ExtResource( 4 )
-hframes = 3
-frame = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerOverworld"]
 playback_process_mode = 0
-anims/walk = ExtResource( 5 )
+anims/PEast = ExtResource( 4 )
+anims/PIdle = ExtResource( 5 )
+anims/PNorth = ExtResource( 6 )
+anims/PSouth = ExtResource( 7 )
+anims/PWest = ExtResource( 8 )
+anims/walk = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerOverworld"]
 position = Vector2( 6.91357, -9.87654 )
 polygon = PoolVector2Array( -1.85417, 4.57026, 7.03473, 4.96532, 7.80789, 11.3282, 0.104202, 12.1184 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerOverworld"]
-position = Vector2( 7.30864, -8.69136 )
+position = Vector2( 13.6296, -8.88889 )
 current = true
 
-[node name="RogueEOW" parent="." instance=ExtResource( 6 )]
+[node name="walk" type="Sprite" parent="PlayerOverworld"]
+position = Vector2( 14.0247, -6.32098 )
+texture = ExtResource( 10 )
+vframes = 5
+hframes = 4
+frame = 15
+
+[node name="RogueEOW" parent="." instance=ExtResource( 11 )]
 position = Vector2( 200.296, 138.864 )
