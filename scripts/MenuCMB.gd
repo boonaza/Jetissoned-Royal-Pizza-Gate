@@ -1,4 +1,4 @@
-extends "res://Node2D.gd"
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -21,7 +21,7 @@ func _on_Flee_pressed():
 		get_node("../Map/PlayerCMB/AnimationPlayer").play("FLEE")
 		yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
 		if ((EscOdds >= Global.EscapeChance)):
-			get_tree().change_scene("res://Tilemapping.tscn")
+			get_tree().change_scene("res://scenes/Main.tscn")
 		
 	pass # Replace with function body.
 
@@ -37,7 +37,7 @@ func _on_Attack_pressed():
 		Global.Gold += get_node("../Map/EnemyCMB").GPval
 		print("Experience: ", PlayerVars.Experience)
 		print("Gold: ", Global.Gold)
-		get_tree().change_scene("res://Encounter.tscn")
+		get_tree().change_scene("res://scenes/Encounter.tscn")
 	pass # Replace with function body.
 
 
