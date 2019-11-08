@@ -26,6 +26,11 @@ window/size/height=270
 window/size/test_width=960
 window/size/test_height=540
 
+[autoload]
+
+PlayerVars="*res://PlayerVars.gd"
+Global="*res://Global.tscn"
+
 [input]
 
 north={

@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/PlayerCMB.gd" type="Script" id=1]
-[ext_resource path="res://images/archer2.png" type="Texture" id=2]
-[ext_resource path="res://images/animations/idle.tres" type="Animation" id=3]
+[ext_resource path="res://PlayerCMB.gd" type="Script" id=1]
+[ext_resource path="res://archer2.png" type="Texture" id=2]
+[ext_resource path="res://ATK.tres" type="Animation" id=3]
+[ext_resource path="res://DEF.tres" type="Animation" id=4]
+[ext_resource path="res://idle.tres" type="Animation" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FLEE"
+length = 1.8
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1, 0, 2 ]
+}
 
 [node name="PlayerCMB" type="KinematicBody2D"]
 collision_layer = 2
@@ -13,7 +32,7 @@ script = ExtResource( 1 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
-frame = 1
+frame = 2
 
 [node name="HurtBox" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -7.33279, -0.929939, -6.68899, -4.09043, -3.99671, -5.37804, -1.18739, -4.03191, -1.71413, -0.637302, -0.777693, 0.708834, 0.861082, 1.76233, -0.426527, 5.33252, -1.48002, 6.15191, -1.12886, 8.84418, -3.58702, 8.78565, -3.82113, 6.97129, -5.51843, 10.3074, -7.85954, 10.7171, -7.50837, 7.49804, -6.45488, 6.50307 )
@@ -22,4 +41,8 @@ polygon = PoolVector2Array( -7.33279, -0.929939, -6.68899, -4.09043, -3.99671, -
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = ExtResource( 3 )
+anims/ATK = ExtResource( 3 )
+anims/DEF = ExtResource( 4 )
+anims/FLEE = SubResource( 1 )
+anims/idle = ExtResource( 5 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
