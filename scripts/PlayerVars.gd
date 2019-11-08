@@ -1,8 +1,5 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var MaxHealth = 100
 var Health = 100
 var Experience = 0
@@ -38,6 +35,3 @@ func kill():
 	print("Game Over")
 	print(Deaths)
 	return 1
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

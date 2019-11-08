@@ -1,8 +1,5 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var EscapeChance = 80
 var Gold = 0
 var Ready = 1
@@ -24,10 +21,3 @@ func daze(var NumTurns):
 	yield(t, "timeout")
 	Ready = 1
 	t.queue_free()
-
-# Called when the node enters the scene tree for the first time.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

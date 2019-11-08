@@ -1,18 +1,7 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var Player = find_node("../PlayerCMB")
 onready var Enemy = find_node("../EnemyCMB")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_Flee_pressed():
 	if (Global.Ready == 1):
@@ -22,8 +11,6 @@ func _on_Flee_pressed():
 		yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
 		if ((EscOdds >= Global.EscapeChance)):
 			get_tree().change_scene("res://scenes/Main.tscn")
-		
-	pass # Replace with function body.
 
 
 func _on_Attack_pressed():
@@ -38,11 +25,9 @@ func _on_Attack_pressed():
 		print("Experience: ", PlayerVars.Experience)
 		print("Gold: ", Global.Gold)
 		get_tree().change_scene("res://scenes/Encounter.tscn")
-	pass # Replace with function body.
 
 
 func _on_Defend_pressed():
 	get_node("../Map/PlayerCMB").Def += PlayerVars.Defense * 2
 	get_node("../Map/PlayerCMB/AnimationPlayer").play("DEF")
 	yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
-	pass # Replace with function body.
