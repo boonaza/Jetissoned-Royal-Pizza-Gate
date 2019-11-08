@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/RogueECMB.gd" type="Script" id=1]
+[ext_resource path="res://images/RogueS.png" type="Texture" id=2]
+
+[node name="RogueECMB" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="HurtBox" type="CollisionPolygon2D" parent="."]
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -5.15054, -0.704161, -5.06275, -5.18154, 0.468128, -6.41062, 4.33096, -2.81116, 3.62863, -0.0896187, 4.41875, 4.73892, 4.59434, 6.40697, 1.785, 6.40697, 0.819294, 3.9488, -1.90225, 7.1093, -5.23833, 7.81163, -5.32612, 4.38776 )

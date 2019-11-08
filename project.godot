@@ -16,13 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="JetisonedRoyalPizzaGate"
-run/main_scene="res://Tilemapping.tscn"
+run/main_scene="res://scenes/Tilemapping.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-PlayerVars="*res://PlayerVars.gd"
-Global="*res://Global.tscn"
+PlayerVars="*res://Scripts/PlayerVars.gd"
+Global="*res://scenes/Global.tscn"
 
 [input]
 
