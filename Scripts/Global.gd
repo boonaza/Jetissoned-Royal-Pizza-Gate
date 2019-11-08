@@ -3,6 +3,12 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+#Options:
+
+var zoom = Vector2(0.3,0.3)
+
+#Character Stats:
 var EscapeChance = 80
 var Gold = 0
 var Ready = 1
