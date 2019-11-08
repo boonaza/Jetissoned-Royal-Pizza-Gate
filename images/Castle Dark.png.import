@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RogueS.png-3260f14c13ff13868ab2a326472f4cc8.stex"
+path="res://.import/Castle Dark.png-6d204db2fe851869713589a71e1d3a4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RogueS.png"
-dest_files=[ "res://.import/RogueS.png-3260f14c13ff13868ab2a326472f4cc8.stex" ]
+source_file="res://images/Castle Dark.png"
+dest_files=[ "res://.import/Castle Dark.png-6d204db2fe851869713589a71e1d3a4b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

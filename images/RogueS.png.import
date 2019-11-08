@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/archer.png-b1eb8c08c06dc0c1c4c64a269f69b509.stex"
+path="res://.import/RogueS.png-501a17cbff37503613d6c08aff8572de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://archer.png"
-dest_files=[ "res://.import/archer.png-b1eb8c08c06dc0c1c4c64a269f69b509.stex" ]
+source_file="res://images/RogueS.png"
+dest_files=[ "res://.import/RogueS.png-501a17cbff37503613d6c08aff8572de.stex" ]
 
 [params]
 

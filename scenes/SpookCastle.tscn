@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Castle Dark.png" type="Texture" id=1]
+[ext_resource path="res://images/Castle Dark.png" type="Texture" id=1]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "Castle Dark.png 0"

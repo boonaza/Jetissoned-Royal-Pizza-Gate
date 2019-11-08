@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RogueEOW.gd" type="Script" id=1]
-[ext_resource path="res://RogueS.png" type="Texture" id=2]
+[ext_resource path="res://scripts/RogueEOW.gd" type="Script" id=1]
+[ext_resource path="res://images/RogueS.png" type="Texture" id=2]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.82342, 4.21583 )
