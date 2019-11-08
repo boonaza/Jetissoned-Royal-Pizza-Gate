@@ -13,7 +13,7 @@ func _physics_process(delta):
 	if ColNfo:
 		MoSp = MoSp.bounce(ColNfo.normal)
 		if(ColNfo.collider.name == "PlayerCMB"):
-			get_tree().change_scene("res://Tilemapping.tscn")
+			get_tree().change_scene("res://scenes/Tilemapping.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

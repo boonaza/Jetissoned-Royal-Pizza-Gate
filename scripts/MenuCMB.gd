@@ -14,10 +14,10 @@ func _ready():
 
 
 func _on_Flee_pressed():
-	get_tree().change_scene("res://Tilemapping.tscn")
+	get_tree().change_scene("res://scenes/Tilemapping.tscn")
 	pass # Replace with function body.
 
 
 func _on_Attack_pressed():
-	get_tree().change_scene("res://Encounter.tscn")
+	get_tree().change_scene("res://scenes/Encounter.tscn")
 	pass # Replace with function body.

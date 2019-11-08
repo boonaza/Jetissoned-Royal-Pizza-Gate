@@ -13,7 +13,7 @@ func _physics_process(delta):
 	if ColNfo:
 		MoSp = MoSp.bounce(ColNfo.normal)
 		if(ColNfo.collider.name == "PlayerOverworld"):
-			get_tree().change_scene("res://Encounter.tscn")
+			get_tree().change_scene("res://scenes/Encounter.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
