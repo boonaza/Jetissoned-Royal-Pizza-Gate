@@ -18,7 +18,8 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("east"):
 		get_node("AnimationPlayer").play("PEast")
 		motion += Vector2(1, 0)
-	if Input.is_action_just_released("north"):
+	if Input.is_action_just_released("north") || Input.is_action_just_released("south") \
+		|| Input.is_action_just_released("west") || Input.is_action_just_released("east"):
 		get_node("AnimationPlayer").play("PIdle")
 		
 	
