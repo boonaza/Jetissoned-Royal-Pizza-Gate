@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/PlayerOverworld.gd" type="Script" id=1]
 [ext_resource path="res://images/animations/PEast.tres" type="Animation" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://images/animations/PWest.tres" type="Animation" id=6]
 [ext_resource path="res://images/animations/idle.tres" type="Animation" id=7]
 [ext_resource path="res://images/archerWalk.png" type="Texture" id=8]
+[ext_resource path="res://scenes/JesterAnimation.tscn" type="PackedScene" id=9]
 
 [node name="PlayerOverworld" type="KinematicBody2D"]
 position = Vector2( 65.9753, 130.37 )
@@ -36,7 +37,10 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="walk" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 8 )
 vframes = 5
 hframes = 4
 frame = 15
+
+[node name="JesterAnimation" parent="." instance=ExtResource( 9 )]

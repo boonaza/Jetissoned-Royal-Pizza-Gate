@@ -7,6 +7,7 @@ var Level = 1
 var Deaths = 0
 var Attack = 10
 var Defense = 2
+var ismoving:int = 0 #[idle, north, south, west, east]
 
 func changeHP(var dmg):
 	Health += dmg
