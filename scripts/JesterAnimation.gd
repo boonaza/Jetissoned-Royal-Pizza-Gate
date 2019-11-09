@@ -1,20 +1,19 @@
-extends Node
-
-var IDLE:String = "Idle"
-var NORTH:String
-var SOUTH:String
-var WEST:String = "Horizontal"
-var EAST:String = "Horizontal"
+extends "MovementAnimation.gd"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#Sets animation variables
+func _ready():
+	IDLE = "Idle"
+	WEST = "Horizontal"
+	EAST = "Horizontal"
+
 func _process(delta):
+	#Set animation
+	chooseAnimation(PlayerVars.ismoving, get_node("AnimationPlayer"))
+	
+	#If needed, flip sprite
 	match PlayerVars.ismoving:
-		0: #Idle
-			get_node("AnimationPlayer").play(IDLE)	
 		3: #East
 			get_node("Sprite").flip_h = false
-			get_node("AnimationPlayer").play(EAST)	
 		4: #West
 			get_node("Sprite").flip_h = true
-			get_node("AnimationPlayer").play(WEST)	
