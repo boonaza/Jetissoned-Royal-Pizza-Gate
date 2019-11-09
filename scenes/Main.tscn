@@ -1,7 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Tilemapping.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PlayerOverworld.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/jester.gd" type="Script" id=3]
+[ext_resource path="res://images/jester.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Horizontal"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 3, 4, 6, 5, 6, 4 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "West"
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +51,24 @@ position = Vector2( 0, -0.214638 )
 
 [node name="PlayerOverworld" parent="." instance=ExtResource( 2 )]
 position = Vector2( 75.5512, 62.3217 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 119.514, 55.7179 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+anims/Horizontal = SubResource( 3 )
+anims/Idle = SubResource( 2 )
+anims/West = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 4 )
+vframes = 8
+hframes = 8
+frame = 4
