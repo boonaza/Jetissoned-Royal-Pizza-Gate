@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/MenuCMB.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SpookCastle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/PlayerCMB.tscn" type="PackedScene" id=3]
-[ext_resource path="res://images/animations/ATK.tres" type="Animation" id=4]
-[ext_resource path="res://scenes/RogueECMB.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/RogueECMB.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/PlayerCMB2.tscn" type="PackedScene" id=4]
 
 [node name="Encounter" type="Node2D"]
 
@@ -21,13 +20,16 @@ collision_mask = 31
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/StaticBody2D"]
 polygon = PoolVector2Array( -8.5482, 6.97778, -156.696, 9.94075, -158.77, 98.5333, -156.993, 119.274, -113.437, 117.793, 74.4148, 118.978, 133.378, 121.052, 169.23, 113.052, 166.563, 47.5704, 166.859, 4.60741, -0.251907, 7.57038, -7.65932, -3.68888, 94.2666, -6.94814, 178.711, -6.35555, 184.933, 126.385, 111.748, 133.793, 23.1555, 130.83, -47.6593, 131.126, -168.844, 130.533, -175.659, 68.3111, -173.882, -5.46666, -23.0667, -6.35555 )
 
-[node name="PlayerCMB" parent="Map" instance=ExtResource( 3 )]
-position = Vector2( -67.9506, 20.1481 )
-
-[node name="PlayerAnim" type="AnimationPlayer" parent="Map/PlayerCMB"]
-anims/ATK = ExtResource( 4 )
-
-[node name="EnemyCMB" parent="Map" instance=ExtResource( 5 )]
+[node name="EnemyCMB" parent="Map" instance=ExtResource( 3 )]
 position = Vector2( 76.4444, 21.9259 )
 collision_layer = 4
 collision_mask = 31
+
+[node name="PlayerCMB" parent="Map" instance=ExtResource( 4 )]
+position = Vector2( -74.0247, 16.1478 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.8, 0.8 )
+offset_v = -0.33
+offset_h = 0.06

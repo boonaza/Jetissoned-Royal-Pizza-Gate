@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/PlayerOverworld.gd" type="Script" id=1]
-[ext_resource path="res://images/animations/PEast.tres" type="Animation" id=2]
-[ext_resource path="res://images/animations/PIdle.tres" type="Animation" id=3]
-[ext_resource path="res://images/animations/PNorth.tres" type="Animation" id=4]
-[ext_resource path="res://images/animations/PSouth.tres" type="Animation" id=5]
-[ext_resource path="res://images/animations/PWest.tres" type="Animation" id=6]
-[ext_resource path="res://images/animations/idle.tres" type="Animation" id=7]
-[ext_resource path="res://images/archerWalk.png" type="Texture" id=8]
+[ext_resource path="res://images/animations/ATK.tres" type="Animation" id=2]
+[ext_resource path="res://images/animations/DEF.tres" type="Animation" id=3]
+[ext_resource path="res://images/animations/PEast.tres" type="Animation" id=4]
+[ext_resource path="res://images/animations/PIdle.tres" type="Animation" id=5]
+[ext_resource path="res://images/animations/PNorth.tres" type="Animation" id=6]
+[ext_resource path="res://images/animations/PSouth.tres" type="Animation" id=7]
+[ext_resource path="res://images/animations/PWest.tres" type="Animation" id=8]
+[ext_resource path="res://images/animations/idle.tres" type="Animation" id=9]
+[ext_resource path="res://images/archerWalk.png" type="Texture" id=10]
 
 [node name="PlayerOverworld" type="KinematicBody2D"]
 position = Vector2( 65.9753, 130.37 )
@@ -20,12 +22,14 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
-anims/PEast = ExtResource( 2 )
-anims/PIdle = ExtResource( 3 )
-anims/PNorth = ExtResource( 4 )
-anims/PSouth = ExtResource( 5 )
-anims/PWest = ExtResource( 6 )
-anims/walk = ExtResource( 7 )
+anims/ATK = ExtResource( 2 )
+anims/DEF = ExtResource( 3 )
+anims/PEast = ExtResource( 4 )
+anims/PIdle = ExtResource( 5 )
+anims/PNorth = ExtResource( 6 )
+anims/PSouth = ExtResource( 7 )
+anims/PWest = ExtResource( 8 )
+anims/walk = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -5.39604, -4.94638 )
@@ -36,7 +40,7 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="walk" type="Sprite" parent="."]
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 vframes = 5
 hframes = 4
 frame = 15
