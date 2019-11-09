@@ -37,9 +37,6 @@ frame = 2
 [node name="HurtBox" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -7.33279, -0.929939, -6.68899, -4.09043, -3.99671, -5.37804, -1.18739, -4.03191, -1.71413, -0.637302, -0.777693, 0.708834, 0.861082, 1.76233, -0.426527, 5.33252, -1.48002, 6.15191, -1.12886, 8.84418, -3.58702, 8.78565, -3.82113, 6.97129, -5.51843, 10.3074, -7.85954, 10.7171, -7.50837, 7.49804, -6.45488, 6.50307 )
 
-[node name="PlayerCam" type="Camera2D" parent="."]
-current = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ATK = ExtResource( 3 )
 anims/DEF = ExtResource( 4 )
