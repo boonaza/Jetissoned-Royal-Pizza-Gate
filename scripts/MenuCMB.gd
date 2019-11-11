@@ -1,33 +1,34 @@
 extends Node2D
 
-onready var Player = find_node("../PlayerCMB")
-onready var Enemy = find_node("../EnemyCMB")
+onready var Player = get_node("..").find_node("PlayerCMB",1)
+onready var Enemy = get_node("..").find_node("EnemyCMB",1)
+onready var PlayAnim = Player.find_node("AnimationPlayer")
 
 func _on_Flee_pressed():
 	if (Global.Ready == 1):
 		var EscOdds = randi() % 100 
 		Global.daze(3)
-		get_node("../Map/PlayerCMB/AnimationPlayer").play("FLEE")
-		yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
+		PlayAnim.play("FLEE")
+		yield(PlayAnim,"animation_finished")
 		if ((EscOdds >= Global.EscapeChance)):
 			get_tree().change_scene("res://scenes/Main.tscn")
 
 
 func _on_Attack_pressed():
-	get_node("../Map/EnemyCMB").damage(PlayerVars.Attack)
-	get_node("../Map/PlayerCMB/AnimationPlayer").play("ATK")
-	yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
-	print("Hit ", get_node("../Map/EnemyCMB").name, " for ", PlayerVars.Attack, " damage!")
+	Enemy.damage(PlayerVars.Attack)
+	PlayAnim.play("ATK")
+	yield(PlayAnim,"animation_finished")
+	print("Hit ", Enemy.name, " for ", PlayerVars.Attack, " damage!")
 	
-	if(get_node("../Map/EnemyCMB").Health <= 0):
-		PlayerVars.changeEXP(get_node("../Map/EnemyCMB").XPval)
-		Global.Gold += get_node("../Map/EnemyCMB").GPval
+	if(Enemy.Health <= 0):
+		PlayerVars.changeEXP(Enemy.XPval)
+		Global.Gold += Enemy.GPval
 		print("Experience: ", PlayerVars.Experience)
 		print("Gold: ", Global.Gold)
 		get_tree().change_scene("res://scenes/Encounter.tscn")
 
 
 func _on_Defend_pressed():
-	get_node("../Map/PlayerCMB").Def += PlayerVars.Defense * 2
-	get_node("../Map/PlayerCMB/AnimationPlayer").play("DEF")
-	yield(get_node("../Map/PlayerCMB/AnimationPlayer"),"animation_finished")
+	Player.Def += PlayerVars.Defense * 2
+	PlayAnim.play("DEF")
+	yield(PlayAnim,"animation_finished")

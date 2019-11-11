@@ -3,9 +3,10 @@ extends KinematicBody2D
 const MOTION_SPEED = 50 # Pixels/second
 const initial_pos = Vector2(340, 360)
 var ismoving:bool = 0
+onready var PlayAnim = get_node("AnimationPlayer")
 
 func _ready():
-	get_node("AnimationPlayer").play("PIdle")
+	PlayAnim.play("PIdle")
 
 func _physics_process(_delta):
 	var motion = Vector2()
@@ -28,19 +29,19 @@ func _physics_process(_delta):
 	
 	if (ismoving):
 		if((abs(motion.x) < abs(motion.y)) && (motion.y <= 0)):
-			get_node("AnimationPlayer").play("PNorth")
+			PlayAnim.play("PNorth")
 		if((abs(motion.x) < abs(motion.y)) && (motion.y > 0)):
-			get_node("AnimationPlayer").play("PSouth")
+			PlayAnim.play("PSouth")
 		if((abs(motion.x) >= abs(motion.y)) && (motion.x >= 0)):
-			get_node("AnimationPlayer").play("PEast")
+			PlayAnim.play("PEast")
 		if((abs(motion.x) >= abs(motion.y)) && (motion.x < 0)):
-			get_node("AnimationPlayer").play("PWest")
+			PlayAnim.play("PWest")
 	
 	
 	if Input.is_action_just_released("north") || Input.is_action_just_released("south") \
 		|| Input.is_action_just_released("west") || Input.is_action_just_released("east"):
 		
-		get_node("AnimationPlayer").play("PIdle")
+		PlayAnim.play("PIdle")
 		ismoving = 0
 		
 	motion = motion.normalized() * MOTION_SPEED
