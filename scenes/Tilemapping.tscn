@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://images/Castle Dark.png" type="Texture" id=1]
 [ext_resource path="res://scenes/RogueEOW.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/TChest.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -102,3 +103,9 @@ tile_data = PoolIntArray( -65539, 0, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0
 
 [node name="RogueEOW" parent="." instance=ExtResource( 2 )]
 position = Vector2( 195.679, 122.09 )
+
+[node name="TChest" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72.0988, 120.099 )
+
+[node name="TChest2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 199.309, 136.099 )

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOTION_SPEED = 50 # Pixels/second
+var MOTION_SPEED = PlayerVars.Motion_Speed_OW # Pixels/second
 const initial_pos = Vector2(340, 360)
 var ismoving:bool = 0
 onready var PlayAnim = get_node("AnimationPlayer")
@@ -47,3 +47,9 @@ func _physics_process(_delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
+	
+func claim_item(var itemid, var itemname):
+	if(itemid == 1):
+		MOTION_SPEED += 0.5 * MOTION_SPEED
+	print(PlayerVars.Name , " has claimed the " , itemname)
+	PlayerVars.Motion_Speed_OW = MOTION_SPEED

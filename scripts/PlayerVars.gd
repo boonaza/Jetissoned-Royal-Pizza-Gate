@@ -7,6 +7,8 @@ var Level = 1
 var Deaths = 0
 var Attack = 10
 var Defense = 2
+var Name = "Player1"
+var Motion_Speed_OW = 50
 
 func changeHP(var dmg):
 	Health += dmg
