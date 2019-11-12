@@ -5,6 +5,7 @@ var MoSp = Vector2(Global.rng.randi_range(-5,5),Global.rng.randi_range(-5,5))
 var itemname = "boots"
 var itemid = 1
 var available:bool = 1
+onready var PlayAnim = get_node("AnimationPlayer")
 
 func _physics_process(delta):
 	var ColNfo = move_and_collide(MoSp * delta)
@@ -16,3 +17,4 @@ func _physics_process(delta):
 			
 func claim():
 	available = 0
+	PlayAnim.play("Open")
