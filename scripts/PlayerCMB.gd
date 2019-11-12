@@ -5,6 +5,7 @@ var MOTION_SPEED = PlayerVars.Motion_Speed_OW # Pixels/second
 const initial_pos = Vector2(340, 360)
 var Def = PlayerVars.Defense
 var THP = PlayerVars.Health
+var team = 1
 var ismoving = 0
 
 func damage(var DMG):
@@ -61,3 +62,6 @@ func _physics_process(_delta):
 		ismoving = 0
 		
 	motion = motion.normalized() * MOTION_SPEED
+
+func create_arrow():
+	get_node("ArrowSpawn").create_arrow()

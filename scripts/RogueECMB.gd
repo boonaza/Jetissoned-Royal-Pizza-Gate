@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 const XPval = 20
 const GPval = 50
+var team = 2
 var Health = 15
 var MoSp = Vector2(-120,-1)
 var ATK = 45
+var DEF = 2
 
 func _physics_process(delta):
 	var ColNfo = move_and_collide(MoSp * delta)
@@ -16,3 +18,13 @@ func _physics_process(delta):
 			
 func damage(var DMG):
 	Health -= DMG
+	print( Health)
+	if (Health <= 0):
+		kill()
+	print("Hit ", name, " for ", PlayerVars.Attack, " damage!")
+		
+func kill():
+	PlayerVars.changeEXP(XPval)
+	Global.Gold += GPval
+	get_child(0).queue_free()
+	get_child(1).queue_free()
