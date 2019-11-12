@@ -7,6 +7,7 @@ var Def = PlayerVars.Defense
 var THP = PlayerVars.Health
 var team = 1
 var ismoving = 0
+var MenuDefeat = preload("res://scenes/MenuDefeat.tscn")
 
 func damage(var DMG):
 	THP -= DMG
@@ -14,6 +15,9 @@ func damage(var DMG):
 	print("Health Remaining = ", THP)
 	if (THP <= 0):
 		PlayerVars.changeHP(1)
+		get_parent().get_parent().Defeat()
+		queue_free()
+		
 
 func _physics_process(_delta):
 	var motion = Vector2()

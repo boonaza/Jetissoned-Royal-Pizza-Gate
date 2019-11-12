@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/Encounter.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Encounter.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MenuCMB.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/SpookCastle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/PlayerCMB.tscn" type="PackedScene" id=4]
-[ext_resource path="res://images/animations/ATK.tres" type="Animation" id=5]
-[ext_resource path="res://scenes/RogueECMB.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/SpookCastle.gd" type="Script" id=4]
+[ext_resource path="res://scenes/PlayerCMB.tscn" type="PackedScene" id=5]
+[ext_resource path="res://images/animations/ATK.tres" type="Animation" id=6]
+[ext_resource path="res://scenes/RogueECMB.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ESpawnPos.tscn" type="PackedScene" id=8]
 
 [node name="Encounter" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,6 +17,7 @@ position = Vector2( -155.852, -17.4815 )
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 65528, 4, 0, 65529, 4, 0, 65530, 4, 0, 65531, 5, 0, 65532, 536870917, 0, 65533, 5, 0, 65534, 536870917, 0, 1, 536870917, 0, 2, 5, 0, 3, 536870917, 0, 4, 5, 0, 5, 536870917, 0, 6, 5, 0, 7, 536870917, 0, 131064, 4, 0, 131065, 4, 0, 131066, 4, 0, 131067, 1073741829, 0, 131068, 1610612741, 0, 131069, 1073741829, 0, 131070, 1610612741, 0, 65537, 1610612741, 0, 65538, 1073741829, 0, 65539, 1610612741, 0, 65540, 1073741829, 0, 65541, 1610612741, 0, 65542, 1073741829, 0, 65543, 1610612741, 0, 196600, 2, 0, 196601, 2, 0, 196602, 2, 0, 196603, 2, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0 )
+script = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Map"]
 position = Vector2( 2.07407, -68.4444 )
@@ -23,16 +26,25 @@ collision_mask = 31
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/StaticBody2D"]
 polygon = PoolVector2Array( -8.5482, 6.97778, -156.696, 9.94075, -158.77, 98.5333, -156.993, 119.274, -113.437, 117.793, 74.4148, 118.978, 133.378, 121.052, 169.23, 113.052, 166.563, 47.5704, 166.859, 4.60741, -0.251907, 7.57038, -7.65932, -3.68888, 94.2666, -6.94814, 178.711, -6.35555, 184.933, 126.385, 111.748, 133.793, 23.1555, 130.83, -47.6593, 131.126, -168.844, 130.533, -175.659, 68.3111, -173.882, -5.46666, -23.0667, -6.35555 )
 
-[node name="PlayerCMB" parent="Map" instance=ExtResource( 4 )]
+[node name="PlayerCMB" parent="Map" instance=ExtResource( 5 )]
 position = Vector2( -67.9506, 20.1481 )
 
 [node name="PlayerAnim" type="AnimationPlayer" parent="Map/PlayerCMB"]
-anims/ATK = ExtResource( 5 )
+anims/ATK = ExtResource( 6 )
 
-[node name="EnemyCMB" parent="Map" instance=ExtResource( 6 )]
+[node name="EnemyCMB" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 76.4444, 21.9259 )
 collision_layer = 4
 collision_mask = 31
+
+[node name="ESpawnPos" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 48.4444, 0.888885 )
+
+[node name="ESpawnPos2" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 112.444, 4.44444 )
+
+[node name="ESpawnPos3" parent="Map" instance=ExtResource( 8 )]
+position = Vector2( 79.1111, -25.7778 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

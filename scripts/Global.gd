@@ -23,3 +23,13 @@ func daze(var NumTurns):
 	yield(t, "timeout")
 	Ready = 1
 	t.queue_free()
+	
+func Restart():
+	EscapeChance = 80
+	Gold = 0
+	Ready = 1
+	rng = RandomNumberGenerator.new()
+
+
+	Player_Position = Vector2(-125,-65)
+	Enemy_Position = Vector2(0,0)

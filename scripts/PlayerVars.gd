@@ -37,3 +37,14 @@ func kill():
 	print("Game Over")
 	print(Deaths)
 	return 1
+	
+func Restart():
+	MaxHealth = 100
+	Health = 100
+	Experience = 0
+	Level = 1
+	Deaths = 0
+	Attack = 10
+	Defense = 2
+	Name = "Player1"
+	Motion_Speed_OW = 50

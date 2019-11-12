@@ -38,7 +38,7 @@ func _on_Attack_pressed():
 		yield(t, "timeout")
 		Ready = 1
 		t.queue_free()
-		yield(PlayAnim,"animation_finished")
+		#yield(PlayAnim,"animation_finished")
 		Player.create_arrow()
 	
 	#if(Enemy.Health <= 0):
