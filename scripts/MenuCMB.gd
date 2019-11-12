@@ -4,6 +4,15 @@ onready var Player = get_node("..").find_node("PlayerCMB",1)
 onready var Enemy = get_node("..").find_node("EnemyCMB",1)
 onready var PlayAnim = Player.find_node("AnimationPlayer")
 
+func _unhandled_input(event):
+	if Input.is_action_pressed("Attack"):
+		_on_Attack_pressed()
+	if Input.is_action_pressed("Defend"):
+		_on_Defend_pressed()
+	if Input.is_action_pressed("Flee"):
+		_on_Flee_pressed()
+
+
 func _on_Flee_pressed():
 	if (Global.Ready == 1):
 		var EscOdds = randi() % 100 
@@ -12,6 +21,7 @@ func _on_Flee_pressed():
 		yield(PlayAnim,"animation_finished")
 		if ((EscOdds >= Global.EscapeChance)):
 			get_tree().change_scene("res://scenes/Main.tscn")
+
 
 
 func _on_Attack_pressed():

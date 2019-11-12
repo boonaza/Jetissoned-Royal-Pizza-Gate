@@ -3,6 +3,8 @@ extends Node
 var EscapeChance = 80
 var Gold = 0
 var Ready = 1
+var rng = RandomNumberGenerator.new()
+
 
 var Player_Position = Vector2(-125,-65)
 var Enemy_Position = Vector2(0,0)

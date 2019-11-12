@@ -53,3 +53,4 @@ func claim_item(var itemid, var itemname):
 		MOTION_SPEED += 0.5 * MOTION_SPEED
 	print(PlayerVars.Name , " has claimed the " , itemname)
 	PlayerVars.Motion_Speed_OW = MOTION_SPEED
+	

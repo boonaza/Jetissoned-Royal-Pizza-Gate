@@ -1,17 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/PlayerCMB.gd" type="Script" id=1]
-[ext_resource path="res://images/archer2.png" type="Texture" id=2]
+[ext_resource path="res://images/archerWalk.png" type="Texture" id=2]
 [ext_resource path="res://images/animations/ATK.tres" type="Animation" id=3]
 [ext_resource path="res://images/animations/DEF.tres" type="Animation" id=4]
-[ext_resource path="res://images/animations/idle.tres" type="Animation" id=5]
+[ext_resource path="res://images/animations/PEast.tres" type="Animation" id=5]
+[ext_resource path="res://images/animations/PIdle.tres" type="Animation" id=6]
+[ext_resource path="res://images/animations/PNorth.tres" type="Animation" id=7]
+[ext_resource path="res://images/animations/PSouth.tres" type="Animation" id=8]
+[ext_resource path="res://images/animations/PWest.tres" type="Animation" id=9]
+[ext_resource path="res://images/animations/idle.tres" type="Animation" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FLEE"
 length = 1.8
 step = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("walk:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,11 +33,12 @@ collision_layer = 2
 collision_mask = 29
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="walk" type="Sprite" parent="."]
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
-hframes = 3
-frame = 2
+vframes = 5
+hframes = 4
+frame = 1
 
 [node name="HurtBox" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -7.33279, -0.929939, -6.68899, -4.09043, -3.99671, -5.37804, -1.18739, -4.03191, -1.71413, -0.637302, -0.777693, 0.708834, 0.861082, 1.76233, -0.426527, 5.33252, -1.48002, 6.15191, -1.12886, 8.84418, -3.58702, 8.78565, -3.82113, 6.97129, -5.51843, 10.3074, -7.85954, 10.7171, -7.50837, 7.49804, -6.45488, 6.50307 )
@@ -41,5 +47,10 @@ polygon = PoolVector2Array( -7.33279, -0.929939, -6.68899, -4.09043, -3.99671, -
 anims/ATK = ExtResource( 3 )
 anims/DEF = ExtResource( 4 )
 anims/FLEE = SubResource( 1 )
-anims/idle = ExtResource( 5 )
+anims/PEast = ExtResource( 5 )
+anims/PIdle = ExtResource( 6 )
+anims/PNorth = ExtResource( 7 )
+anims/PSouth = ExtResource( 8 )
+anims/PWest = ExtResource( 9 )
+anims/idle = ExtResource( 10 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
