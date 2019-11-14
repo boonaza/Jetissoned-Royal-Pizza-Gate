@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Encounter.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MenuCMB.tscn" type="PackedScene" id=2]
@@ -6,8 +6,7 @@
 [ext_resource path="res://scripts/SpookCastle.gd" type="Script" id=4]
 [ext_resource path="res://scenes/PlayerCMB.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/animations/ATK.tres" type="Animation" id=6]
-[ext_resource path="res://scenes/RogueECMB.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/ESpawnPos.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/ESpawnPos.tscn" type="PackedScene" id=7]
 
 [node name="Encounter" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,17 +31,13 @@ position = Vector2( -67.9506, 20.1481 )
 [node name="PlayerAnim" type="AnimationPlayer" parent="Map/PlayerCMB"]
 anims/ATK = ExtResource( 6 )
 
-[node name="EnemyCMB" parent="Map" instance=ExtResource( 7 )]
-position = Vector2( 76.4444, 21.9259 )
-collision_mask = 31
-
-[node name="ESpawnPos1" parent="Map" instance=ExtResource( 8 )]
+[node name="ESpawnPos1" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 48.4444, 0.888885 )
 
-[node name="ESpawnPos2" parent="Map" instance=ExtResource( 8 )]
+[node name="ESpawnPos2" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 112.444, 4.44444 )
 
-[node name="ESpawnPos3" parent="Map" instance=ExtResource( 8 )]
+[node name="ESpawnPos3" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 79.1111, -25.7778 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

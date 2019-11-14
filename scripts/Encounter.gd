@@ -12,7 +12,9 @@ var MenuD = preload("res://scenes/MenuDefeat.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	eneNum = Global.rng.randi_range(1,3)
-	print( eneNum)
+	print(eneNum)
+	for i in range(eneNum):
+		find_node("ESpawnPos" + str(i+1)).spawn()
 
 func Defeat():
 	get_child(0).queue_free()

@@ -8,6 +8,7 @@ var THP = PlayerVars.Health
 var team = 1
 var ismoving = 0
 var MenuDefeat = preload("res://scenes/MenuDefeat.tscn")
+var angle = Vector2(20,1)
 
 func damage(var DMG):
 	THP -= DMG
@@ -66,6 +67,6 @@ func _physics_process(_delta):
 		ismoving = 0
 		
 	motion = motion.normalized() * MOTION_SPEED
-
+	angle = motion.normalized()
 func create_arrow():
 	get_node("ArrowSpawn").create_arrow()

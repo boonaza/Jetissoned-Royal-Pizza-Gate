@@ -9,8 +9,9 @@ var ID = 0
 
 func _physics_process(delta):
 	var ColNfo = move_and_collide(MoSp * delta)
+	var PlayerAngle = (Global.Player_Position - position).normalized()
 	if ColNfo:
-		MoSp = MoSp.bounce(ColNfo.normal)
+		MoSp = MoSp.bounce((ColNfo.normal - 0.5*PlayerAngle).normalized())
 		if(ColNfo.collider.name == "PlayerOverworld"):
 			Encounter(ColNfo)
 

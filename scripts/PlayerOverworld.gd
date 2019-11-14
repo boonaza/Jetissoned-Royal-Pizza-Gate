@@ -47,6 +47,7 @@ func _physics_process(_delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
+	Global.Player_Position = position
 	
 func claim_item(var itemid, var itemname):
 	if(itemid == 1):
