@@ -8,6 +8,9 @@ var MoSp = Vector2(-120,-1)
 var ATK = 45
 var DEF = 2
 
+func _ready():
+	Global.Enemy_Count += 1
+
 func _physics_process(delta):
 	var ColNfo = move_and_collide(MoSp * delta)
 	if ColNfo:
@@ -24,6 +27,7 @@ func damage(var DMG):
 	print("Hit ", name, " for ", PlayerVars.Attack, " damage!")
 		
 func kill():
+	Global.Enemy_Count -= 1
 	PlayerVars.changeEXP(XPval)
 	Global.Gold += GPval
 	get_child(0).queue_free()

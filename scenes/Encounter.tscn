@@ -34,10 +34,9 @@ anims/ATK = ExtResource( 6 )
 
 [node name="EnemyCMB" parent="Map" instance=ExtResource( 7 )]
 position = Vector2( 76.4444, 21.9259 )
-collision_layer = 4
 collision_mask = 31
 
-[node name="ESpawnPos" parent="Map" instance=ExtResource( 8 )]
+[node name="ESpawnPos1" parent="Map" instance=ExtResource( 8 )]
 position = Vector2( 48.4444, 0.888885 )
 
 [node name="ESpawnPos2" parent="Map" instance=ExtResource( 8 )]

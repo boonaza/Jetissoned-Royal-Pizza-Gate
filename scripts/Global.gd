@@ -5,6 +5,7 @@ var Gold = 0
 var Ready = 1
 var rng = RandomNumberGenerator.new()
 var Current_Enemy = 1
+var Enemy_Count = 0
 
 
 var Player_Position = Vector2(100,80)
