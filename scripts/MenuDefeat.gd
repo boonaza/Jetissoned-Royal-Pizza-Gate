@@ -20,6 +20,7 @@ func _unhandled_input(event):
 func _on_Retry_pressed():
 	PlayerVars.Restart()
 	Global.Restart()
+	Status.Restart()
 	get_tree().change_scene("res://scenes/Main.tscn")
 
 

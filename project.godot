@@ -23,6 +23,7 @@ config/icon="res://images/icon.png"
 
 PlayerVars="*res://scripts/PlayerVars.gd"
 Global="*res://scenes/Global.tscn"
+Status="*res://scripts/Status.gd"
 
 [display]
 

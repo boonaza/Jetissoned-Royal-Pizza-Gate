@@ -4,13 +4,14 @@ var EscapeChance = 80
 var Gold = 0
 var Ready = 1
 var rng = RandomNumberGenerator.new()
+var Current_Enemy = 1
 
 
-var Player_Position = Vector2(-125,-65)
+var Player_Position = Vector2(100,80)
 var Enemy_Position = Vector2(0,0)
 
 func Store_Position(var PlrPos,var NmyPos):
-	Player_Position = -(PlrPos)
+	Player_Position = (PlrPos)
 	Enemy_Position = NmyPos
 
 func daze(var NumTurns):
@@ -29,7 +30,7 @@ func Restart():
 	Gold = 0
 	Ready = 1
 	rng = RandomNumberGenerator.new()
+	Current_Enemy = 1
 
 
-	Player_Position = Vector2(-125,-65)
-	Enemy_Position = Vector2(0,0)
+	Player_Position = Vector2(100,80)
