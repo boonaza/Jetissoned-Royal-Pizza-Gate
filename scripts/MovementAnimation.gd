@@ -7,7 +7,7 @@ var WEST:String
 var EAST:String
 
 #Picks an animation specified by child and current direction
-func chooseAnimation(aniCode, player):
+func setAnimation(aniCode, player):
 	match aniCode:
 		0: #Idle
 			player.play(IDLE)	

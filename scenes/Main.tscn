@@ -13,3 +13,4 @@ position = Vector2( 0, -0.214638 )
 position = Vector2( 75.5512, 62.3217 )
 
 [node name="Jester" parent="." instance=ExtResource( 3 )]
+position = Vector2( 113.066, 50.0625 )

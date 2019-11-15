@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/PlayerOverworld.gd" type="Script" id=1]
+[ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://images/animations/PEast.tres" type="Animation" id=2]
 [ext_resource path="res://images/animations/PIdle.tres" type="Animation" id=3]
 [ext_resource path="res://images/animations/PNorth.tres" type="Animation" id=4]
@@ -10,8 +10,10 @@
 [ext_resource path="res://images/archerWalk.png" type="Texture" id=8]
 [ext_resource path="res://scenes/JesterAnimation.tscn" type="PackedScene" id=9]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.73536, 7.82223 )
+
 [node name="PlayerOverworld" type="KinematicBody2D"]
-position = Vector2( 65.9753, 130.37 )
 collision_layer = 2
 collision_mask = 29
 script = ExtResource( 1 )
@@ -28,10 +30,6 @@ anims/PSouth = ExtResource( 5 )
 anims/PWest = ExtResource( 6 )
 anims/walk = ExtResource( 7 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -5.39604, -4.94638 )
-polygon = PoolVector2Array( -1.85417, 4.57026, 7.03473, 4.96532, 7.80789, 11.3282, 0.104202, 12.1184 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
@@ -44,3 +42,7 @@ hframes = 4
 frame = 15
 
 [node name="JesterAnimation" parent="." instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.510468, 0.561515 )
+shape = SubResource( 1 )

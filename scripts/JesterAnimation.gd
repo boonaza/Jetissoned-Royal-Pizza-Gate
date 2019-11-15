@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	#Set animation
-	chooseAnimation(PlayerVars.ismoving, get_node("AnimationPlayer"))
+	setAnimation(PlayerVars.ismoving, get_node("AnimationPlayer"))
 	
 	#If needed, flip sprite
 	match PlayerVars.ismoving:
