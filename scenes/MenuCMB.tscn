@@ -11,12 +11,12 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 157.0
+margin_right = 216.0
 margin_bottom = 14.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 18.0
-margin_right = 157.0
+margin_right = 216.0
 margin_bottom = 68.0
 
 [node name="Container" type="Container" parent="VBoxContainer/HBoxContainer"]
@@ -31,7 +31,7 @@ margin_bottom = 50.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 72.0
-margin_right = 157.0
+margin_right = 216.0
 margin_bottom = 92.0
 
 [node name="Attack" type="Button" parent="VBoxContainer/HBoxContainer2"]
@@ -52,6 +52,13 @@ margin_bottom = 20.0
 action_mode = 0
 text = "Flee"
 script = ExtResource( 2 )
+
+[node name="Reload" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 161.0
+margin_right = 216.0
+margin_bottom = 20.0
+text = "Reload"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Attack" to="." method="_on_Attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Defend" to="." method="_on_Defend_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Flee" to="." method="_on_Flee_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Reload" to="." method="_on_Reload_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Arrow.gd" type="Script" id=1]
+[ext_resource path="res://images/Arrow.png" type="Texture" id=2]
+
+[node name="Arrow" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -9.25982, -2.35144, -9.37687, -0.888245, -7.97221, -0.127385, -9.4354, 0.106726, -9.02571, 1.45286, -4.5776, 1.62845, -3.40705, 0.692002, 4.3186, 0.867585, 4.72829, 1.92108, 8.00584, 1.97961, 9.99578, -0.595606, 7.71321, -2.81966, 5.13799, -2.81966, 4.3186, -1.94174, -4.63613, -1.82469, -5.51405, -2.87819, -9.14276, -3.05377 )

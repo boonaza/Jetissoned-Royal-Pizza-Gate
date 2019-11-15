@@ -8,6 +8,8 @@ var Deaths = 0
 var Attack = 10
 var Defense = 2
 var ismoving:int = 0 #[idle, north, south, west, east]
+var Name = "Player1"
+var Motion_Speed_OW = 50
 
 func changeHP(var dmg):
 	Health += dmg
@@ -36,3 +38,14 @@ func kill():
 	print("Game Over")
 	print(Deaths)
 	return 1
+	
+func Restart():
+	MaxHealth = 100
+	Health = 100
+	Experience = 0
+	Level = 1
+	Deaths = 0
+	Attack = 10
+	Defense = 2
+	Name = "Player1"
+	Motion_Speed_OW = 50

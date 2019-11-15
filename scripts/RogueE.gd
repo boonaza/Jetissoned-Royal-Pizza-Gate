@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const XPval = 20
 const GPval = 50
+var team = 2
 var MoSp = Vector2(20,20)
 
 func _physics_process(delta):

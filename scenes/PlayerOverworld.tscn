@@ -30,7 +30,11 @@ anims/PSouth = ExtResource( 5 )
 anims/PWest = ExtResource( 6 )
 anims/walk = ExtResource( 7 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -5.39604, -4.94638 )
+polygon = PoolVector2Array( -1.85417, 4.57026, 7.03473, 4.96532, 7.80789, 11.3282, 0.104202, 12.1184 )
+
+[node name="POWCamera" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
 

@@ -19,7 +19,7 @@ func set_ID(var id):
 	ID = id
 
 func Encounter(var CollInfo):
-			print("Oh no!  You have been attacked by a Bandit!")
+			print("!tidnaB a yb dekcatta neeb evah uoY  !on hO")
 			Global.Store_Position(CollInfo.collider.get_position(),get_position())
 			print(CollInfo.collider.get_position(), " ", get_position())
 			Global.Current_Enemy = ID

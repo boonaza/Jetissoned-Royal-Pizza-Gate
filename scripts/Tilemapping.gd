@@ -1,7 +1,14 @@
 extends Node2D
 
-var lp_pos = Vector2(-125,-65)
+var Spawn1
+var Spawn2
 
 func _ready():
-	lp_pos = Global.Player_Position
-	set_global_position(lp_pos)
+	Spawn1 = get_node("enemySpawn")
+	Spawn2 = get_node("enemySpawn2")
+	if (Status.Spawners[1] == "alive"):
+		Spawn1.init(1)
+		Spawn1.spawn()
+	if (Status.Spawners[2] == "alive"):
+		Spawn2.init(2)
+		Spawn2.spawn()

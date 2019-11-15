@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AntiRogue.gd" type="Script" id=1]
+[ext_resource path="res://images/AntiRogue.png" type="Texture" id=2]
+
+[node name="AntiRogue" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="AntiRogue" type="Sprite" parent="."]
+position = Vector2( -0.787712, -0.960588 )
+texture = ExtResource( 2 )

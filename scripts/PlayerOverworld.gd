@@ -1,24 +1,12 @@
 extends KinematicBody2D
 
-onready var PlayAnim = get_node("AnimationPlayer")
 var MOTION_SPEED = PlayerVars.Motion_Speed_OW # Pixels/second
 const initial_pos = Vector2(340, 360)
-var Def = PlayerVars.Defense
-var THP = PlayerVars.Health
-var team = 1
-var ismoving = 0
-var MenuDefeat = preload("res://scenes/MenuDefeat.tscn")
-var angle = Vector2(20,1)
+var ismoving:bool = 0
+onready var PlayAnim = get_node("AnimationPlayer")
 
-func damage(var DMG):
-	THP -= DMG
-	PlayerVars.Health = THP
-	print("Health Remaining = ", THP)
-	if (THP <= 0):
-		PlayerVars.changeHP(1)
-		get_parent().get_parent().Defeat()
-		queue_free()
-		
+func _ready():
+	PlayAnim.play("PIdle")
 
 func _physics_process(_delta):
 	var motion = Vector2()
@@ -44,9 +32,9 @@ func _physics_process(_delta):
 			PlayAnim.play("PNorth")
 		if((abs(motion.x) < abs(motion.y)) && (motion.y > 0)):
 			PlayAnim.play("PSouth")
-		if((abs(motion.x) >= abs(motion.y)) && (motion.x <= 0)):
+		if((abs(motion.x) >= abs(motion.y)) && (motion.x >= 0)):
 			PlayAnim.play("PEast")
-		if((abs(motion.x) >= abs(motion.y)) && (motion.x > 0)):
+		if((abs(motion.x) >= abs(motion.y)) && (motion.x < 0)):
 			PlayAnim.play("PWest")
 	
 	
@@ -59,14 +47,11 @@ func _physics_process(_delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
+	Global.Player_Position = position
 	
-	if Input.is_action_just_released("north") || Input.is_action_just_released("south") \
-		|| Input.is_action_just_released("west") || Input.is_action_just_released("east"):
-		
-		PlayAnim.play("PIdle")
-		ismoving = 0
-		
-	motion = motion.normalized() * MOTION_SPEED
-	angle = motion.normalized()
-func create_arrow():
-	get_node("ArrowSpawn").create_arrow()
+func claim_item(var itemid, var itemname):
+	if(itemid == 1):
+		MOTION_SPEED += 0.5 * MOTION_SPEED
+	print(PlayerVars.Name , " has claimed the " , itemname)
+	PlayerVars.Motion_Speed_OW = MOTION_SPEED
+	
