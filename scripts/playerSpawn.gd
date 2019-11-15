@@ -14,4 +14,5 @@ func _ready():
 func create_player():
 	var new_player = player.instance()
 	new_player.position = Global.Player_Position #position + Vector2(20,1)
+	new_player.name = "PlayerOverworld"
 	add_child(new_player)

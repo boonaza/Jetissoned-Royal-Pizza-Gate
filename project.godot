@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="JetisonedRoyalPizzaGate"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Control.tscn"
 config/icon="res://images/icon.png"
 
 [autoload]
@@ -76,6 +76,16 @@ Flee={
 DebugSpawn={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":61,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Debug_Encounter={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":45,"unicode":0,"echo":false,"script":null)
+ ]
+}
+DebugZoom={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":48,"unicode":0,"echo":false,"script":null)
  ]
 }
 

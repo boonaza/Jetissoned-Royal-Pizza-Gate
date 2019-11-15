@@ -3,7 +3,7 @@ extends KinematicBody2D
 const XPval = 20
 const GPval = 50
 var team = 2
-var MoSp = Vector2(20,20)
+var MoSp = Vector2(30,30)
 var ID = 0
 
 
@@ -23,4 +23,4 @@ func Encounter(var CollInfo):
 			Global.Store_Position(CollInfo.collider.get_position(),get_position())
 			print(CollInfo.collider.get_position(), " ", get_position())
 			Global.Current_Enemy = ID
-			get_tree().change_scene("res://scenes/Encounter.tscn")
+			get_tree().get_root().get_node("Control").encounterEnemy(self)

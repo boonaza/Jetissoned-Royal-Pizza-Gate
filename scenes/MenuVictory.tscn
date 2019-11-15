@@ -28,5 +28,5 @@ margin_bottom = 38.0
 margin_right = 54.0
 margin_bottom = 20.0
 text = "Return"
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Return" to="." method="_on_Return_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Return" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Return" to="." method="_on_Return_pressed"]

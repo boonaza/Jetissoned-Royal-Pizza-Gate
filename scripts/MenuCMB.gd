@@ -21,7 +21,7 @@ func _on_Flee_pressed():
 		PlayAnim.play("FLEE")
 		yield(PlayAnim,"animation_finished")
 		if ((EscOdds >= Global.EscapeChance)):
-			get_tree().change_scene("res://scenes/Main.tscn")
+			get_tree().get_root().get_node("Control").returnOverworld(2)
 
 
 

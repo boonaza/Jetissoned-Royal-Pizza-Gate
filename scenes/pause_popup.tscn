@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Popup.gd" type="Script" id=1]
+
+[node name="pause_popup" type="Popup"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -21.7284
+margin_top = 1.18518
+margin_right = 19.2716
+margin_bottom = 32.1852
+text = "PAUSED
+"
+
+[node name="Unpause" type="Button" parent="."]
+margin_left = -33.7778
+margin_top = 16.5926
+margin_right = 34.2222
+margin_bottom = 36.5926
+text = "Unpause"
+[connection signal="pressed" from="Unpause" to="." method="_on_Unpause_pressed"]

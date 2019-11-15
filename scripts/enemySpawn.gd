@@ -15,7 +15,7 @@ var child = preload("res://scenes/RogueEOW.tscn")
 
 func spawn():
 	var new_child = child.instance()
-	new_child.position = Global.Enemy_Position + Vector2(Global.rng.randi() % 10,Global.rng.randi() % 10)#position + Vector2(20,1)
+	new_child.position = Global.Enemy_Position + Vector2(Global.rng.randi() % 2,Global.rng.randi() % 2)#position + Vector2(20,1)
 	add_child(new_child)
 	for i in get_child_count():
 		get_child(i).set_ID(ID)

@@ -21,7 +21,7 @@ func _on_Retry_pressed():
 	PlayerVars.Restart()
 	Global.Restart()
 	Status.Restart()
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().get_root().get_node("Control").returnOverworld(3)
 
 
 func _on_Quit_pressed():
