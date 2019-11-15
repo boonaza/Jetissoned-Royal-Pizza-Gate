@@ -24,7 +24,7 @@ var child = preload("res://scenes/RogueECMB.tscn")
 
 func spawn():
 	var new_child = child.instance()
-	new_child.position = Global.Enemy_Position #+ Vector2(Global.rng.randi() % 10,Global.rng.randi() % 10)#position + Vector2(20,1)
+	new_child.position = position #+ Vector2(Global.rng.randi() % 10,Global.rng.randi() % 10)#position + Vector2(20,1)
 	new_child.set_name("Enemy" + str(Global.rng.randf()))
 	add_child(new_child)
 #func create_enemy():

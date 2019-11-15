@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Encounter.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MenuCMB.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://scenes/PlayerCMB.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/animations/ATK.tres" type="Animation" id=6]
 [ext_resource path="res://scenes/ESpawnPos.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -74.3586, 30.4927 )
+b = Vector2( 422.837, -23.763 )
 
 [node name="Encounter" type="Node2D"]
 pause_mode = 1
@@ -25,7 +29,41 @@ position = Vector2( 2.07407, -68.4444 )
 collision_mask = 31
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/StaticBody2D"]
-polygon = PoolVector2Array( -8.5482, 6.97778, -156.696, 9.94075, -158.77, 98.5333, -156.993, 119.274, -113.437, 117.793, 74.4148, 118.978, 133.378, 121.052, 169.23, 113.052, 166.563, 47.5704, 166.859, 4.60741, -0.251907, 7.57038, -7.65932, -3.68888, 94.2666, -6.94814, 178.711, -6.35555, 184.933, 126.385, 111.748, 133.793, 23.1555, 130.83, -47.6593, 131.126, -168.844, 130.533, -175.659, 68.3111, -173.882, -5.46666, -23.0667, -6.35555 )
+position = Vector2( -0.888885, 0.888893 )
+polygon = PoolVector2Array( -22.9631, 6.80009, -156.696, 9.94075, -158.77, 98.5333, -156.993, 119.274, -113.437, 117.793, 74.4148, 118.978, 133.378, 121.052, 169.23, 113.052, 166.563, 47.5704, 166.859, 4.60741, -0.251907, 7.57038, -1.6298, -5.64435, 94.2666, -6.94814, 178.711, -6.35555, 184.933, 126.385, 111.748, 133.793, 23.1555, 130.83, -47.6593, 131.126, -168.844, 130.533, -175.659, 68.3111, -173.882, -5.46666, -23.0667, -6.35555 )
+disabled = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map/StaticBody2D"]
+position = Vector2( -124.889, -70.2222 )
+polygon = PoolVector2Array( -29.8965, -26.9776, -189.185, -36.3998, -219.23, 34.6224, -210.785, 116.845, -226.785, 306.356, -25.9852, 371.778, 201.57, 348.667, 480.237, 326.445, 484.326, -31.4221, 167.259, -58.7999, -0.296356, -33.4666, -7.65932, -3.68888, 94.2666, -6.94814, 457.304, -6.97772, 460.415, 282.356, 254.281, 312.578, 35.6147, 311.245, -179.407, 244.489, -168.844, 130.533, -175.659, 68.3111, -173.882, -5.46666, -23.0667, -6.35555 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D"]
+position = Vector2( 182.667, -12 )
+rotation = 3.24282
+shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 90.1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map/StaticBody2D"]
+position = Vector2( -173.333, -35.3333 )
+rotation = 1.71915
+shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 90.1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map/StaticBody2D"]
+position = Vector2( -156, 161.333 )
+rotation = 0.0750492
+shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 90.1
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map/StaticBody2D"]
+position = Vector2( 188, 204 )
+rotation = -1.51669
+shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 90.1
 
 [node name="PlayerCMB" parent="Map" instance=ExtResource( 5 )]
 position = Vector2( -67.9506, 20.1481 )
@@ -34,13 +72,13 @@ position = Vector2( -67.9506, 20.1481 )
 anims/ATK = ExtResource( 6 )
 
 [node name="ESpawnPos1" parent="Map" instance=ExtResource( 7 )]
-position = Vector2( 48.4444, 0.888885 )
+position = Vector2( 43.5555, -0.444458 )
 
 [node name="ESpawnPos2" parent="Map" instance=ExtResource( 7 )]
-position = Vector2( 112.444, 4.44444 )
+position = Vector2( 112.888, 15.5555 )
 
 [node name="ESpawnPos3" parent="Map" instance=ExtResource( 7 )]
-position = Vector2( 79.1111, -25.7778 )
+position = Vector2( 76.4444, -44.4445 )
 
 [node name="EncounterCamera" type="Camera2D" parent="."]
 current = true
