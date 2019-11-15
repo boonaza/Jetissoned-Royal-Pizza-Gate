@@ -57,18 +57,12 @@ func encounterEnemy(var EnemyID):
 		PCMBCam.make_current()
 		
 func returnOverworld(var Victory):
+	remove_child(encounterStage)
+	encounterStage.queue_free()
+	add_child(main)
 	if(Victory == 1):
-		remove_child(encounterStage)
-		encounterStage.queue_free()
-		add_child(main)
 		CurrentEnemy.queue_free()
 	if (Victory == 2):
-		remove_child(encounterStage)
-		encounterStage.queue_free()
-		add_child(main)
 		CurrentEnemy.position += Vector2(20,0)
 	if (Victory == 3):
-		remove_child(encounterStage)
-		encounterStage.queue_free()
-		add_child(main)
 		main.get_tree().reload_current_scene()
