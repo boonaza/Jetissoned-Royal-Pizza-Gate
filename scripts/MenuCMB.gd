@@ -31,6 +31,7 @@ func _on_Attack_pressed():
 	if (Ready):
 		PlayAnim.play("ATK")
 		Ready = 0
+		Player.create_arrow()
 		var t = Timer.new()
 		t.set_wait_time(0.5)
 		t.set_one_shot(true)
@@ -40,7 +41,7 @@ func _on_Attack_pressed():
 		Ready = 1
 		t.queue_free()
 		#yield(PlayAnim,"animation_finished")
-		Player.create_arrow()
+		#Player.create_arrow()
 	
 	#if(Enemy.Health <= 0):
 	#	PlayerVars.changeEXP(Enemy.XPval)

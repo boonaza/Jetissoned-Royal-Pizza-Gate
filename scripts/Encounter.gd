@@ -11,21 +11,22 @@ var MenuV = preload("res://scenes/MenuVictory.tscn")
 var MenuD = preload("res://scenes/MenuDefeat.tscn")
 # Called when the node enters the scene tree for the first time.
 
-func _ready():
-	if (Global.Current_Enemy != 0):
-		init()
+#func _ready():
+	#if (Global.Current_Enemy != 0):
+	#	init()
 	#get_node("EncounterCamera").current = false
 #	eneNum = Global.rng.randi_range(1,3)
 #	print(eneNum)
 #	for i in range(eneNum):
 #		find_node("ESpawnPos" + str(i+1)).spawn()
 
-func init():
+func init(var EnemyEncountered = EnemyA):
 	eneNum = Global.rng.randi_range(1,3)
 	print(eneNum)
 	find_node("EncounterCamera").make_current()
 	print(find_node("EncounterCamera").current)
 	for i in range(eneNum):
+		find_node("ESpawnPos" + str(i+1)).init(EnemyEncountered.TrueID)
 		find_node("ESpawnPos" + str(i+1)).spawn()
 	
 func Defeat():

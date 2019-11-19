@@ -15,6 +15,9 @@ var PlayerEnc
 var PCMBCam
 var encounterStage
 var CurrentEnemy
+var encounterT = Timer.new()
+var canEncount = 1
+var wrEnemy
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -47,10 +50,12 @@ func _unhandled_input(event):
 #func _process(delta):
 #	pass
 func encounterEnemy(var EnemyID):
+	if (canEncount == 1):
 		CurrentEnemy = EnemyID
+		wrEnemy = weakref(CurrentEnemy)
 		remove_child(main)
 		add_child(encounterFile.instance())
-		get_node("Encounter").init()
+		get_node("Encounter").init(EnemyID)
 		encounterStage = get_node("Encounter")
 		PCMBCam = find_node("EncounterCamera",true,false)
 		PlayerEnc = find_node("PlayerCMB",true,false)
@@ -60,9 +65,20 @@ func returnOverworld(var Victory):
 	remove_child(encounterStage)
 	encounterStage.queue_free()
 	add_child(main)
-	if(Victory == 1):
-		CurrentEnemy.queue_free()
-	if (Victory == 2):
-		CurrentEnemy.position += Vector2(20,0)
-	if (Victory == 3):
-		main.get_tree().reload_current_scene()
+	canEncount = 0
+	var t = Timer.new()
+	t.set_wait_time(0.5)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	if (wrEnemy.get_ref()):
+		
+		if(Victory == 1):
+			CurrentEnemy.queue_free()
+		if (Victory == 2):
+			CurrentEnemy.position += Vector2(20,0)
+		if (Victory == 3):
+			main.get_tree().reload_current_scene()
+	yield(t, "timeout")
+	t.queue_free()
+	canEncount = 1

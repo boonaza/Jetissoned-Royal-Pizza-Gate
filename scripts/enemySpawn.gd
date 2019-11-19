@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var ID = 0
-var EnemyType = "RogueEOW.tscn"
+var EnemyType = 1
 var child = preload("res://scenes/RogueEOW.tscn")
 
 
@@ -20,7 +20,8 @@ func spawn():
 	for i in get_child_count():
 		get_child(i).set_ID(ID)
 
-func init(var id, var enemy_type = "RogueEOW.tscn"):
+func init(var id, var enemy_type = 1):
 	ID = id
 	EnemyType = enemy_type
+	child = load("res://scenes/" + Status.EnemyList[EnemyType])
 	

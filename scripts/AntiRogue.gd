@@ -4,14 +4,20 @@ const XPval = 20
 const GPval = 50
 var team = 2
 var MoSp = Vector2(30,30)
-var ID = 0
+var ID = 2
+const TrueID = 2
+var playerfound:bool = false
+var playerC
 
 
 func _physics_process(delta):
-	var ColNfo = move_and_collide(MoSp * delta)
-	var PlayerAngle = (Global.Player_Position - position).normalized()
+	#if !playerfound:
+	#	playerC = get_tree().get_root().find_node("PlayerCMB",1,0)
+	#if playerfound:
+	var PlayerAngle = (Global.Player_Position - global_position).normalized()
+	var ColNfo = move_and_collide(PlayerAngle * delta * 30)
 	if ColNfo:
-		MoSp = MoSp.bounce((ColNfo.normal - 0.5*PlayerAngle).normalized())
+		#MoSp = MoSp.bounce((ColNfo.normal - 0.5*PlayerAngle).normalized())
 		if(ColNfo.collider.name == "PlayerOverworld"):
 			Encounter(ColNfo)
 
