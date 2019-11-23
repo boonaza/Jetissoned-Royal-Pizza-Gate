@@ -5,7 +5,7 @@ extends Node2D
 # var b = "text"
 var player = preload("res://scenes/PlayerOverworld.tscn")
 onready var POWC = find_node("PlayerOverworld",true,false)
-
+var plrspawn = Vector2(100,80)
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 #	create_player()

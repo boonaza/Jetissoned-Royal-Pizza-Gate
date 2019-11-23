@@ -61,6 +61,19 @@ func encounterEnemy(var EnemyID):
 		PlayerEnc = find_node("PlayerCMB",true,false)
 		PCMBCam.make_current()
 		
+
+func newMap(var MapID = 0):
+	var newmainfile = load("res://scenes/Main.tscn")
+	var newmain = newmainfile.instance()
+	call_deferred("remove_child",main)
+	var oldmain = main
+	main = newmain
+	call_deferred("oldmain.queue_free")
+	call_deferred("add_child",newmain)
+	#call_deferred("remove_child",main)
+	#call_deferred("main",.queue_free())
+	#Global.loading = 0
+
 func returnOverworld(var Victory):
 	remove_child(encounterStage)
 	encounterStage.queue_free()

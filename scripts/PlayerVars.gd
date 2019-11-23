@@ -10,6 +10,8 @@ var Defense = 2
 var ismoving:int = 0 #[idle, north, south, west, east]
 var Name = "Player1"
 var Motion_Speed_OW = 50
+var ArrowSpeed = 1.5
+var ArrowCooldown = 0.5
 
 func changeHP(var dmg):
 	Health += dmg
@@ -33,6 +35,8 @@ func LevelUp():
 	Health = MaxHealth
 	Attack += Level*2
 	Defense += Level
+	ArrowSpeed += Level*0.01
+	ArrowCooldown -= Level*0.01
 	
 func kill():
 	print("Game Over")

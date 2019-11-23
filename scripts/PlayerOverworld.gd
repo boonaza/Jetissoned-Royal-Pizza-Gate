@@ -12,6 +12,7 @@ var ActEast:String = "east"
 
 func _ready():
 	PlayAnim.play("PIdle")
+	Global.loading = 0
 
 func _physics_process(_delta):
 	var motion = Vector2()
@@ -47,7 +48,7 @@ func _physics_process(_delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
-	Global.Player_Position = position
+	Global.Set_Player_Position(position)
 	
 func claim_item(var itemid, var itemname):
 	if(itemid == 1):

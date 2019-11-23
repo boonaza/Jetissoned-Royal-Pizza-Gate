@@ -67,6 +67,9 @@ func _physics_process(_delta):
 		ismoving = 0
 		
 	motion = motion.normalized() * MOTION_SPEED
-	angle = motion.normalized()
+	if(ismoving):
+		angle = motion.normalized()
+	
+
 func create_arrow():
-	get_node("ArrowSpawn").create_arrow()
+	get_node("ArrowSpawn").create_arrow(angle)

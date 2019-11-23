@@ -7,6 +7,7 @@ extends Node2D
 var Spawners:Array = ["alive"]
 const EnemyList:Array = ["RogueEOW.tscn", "RogueEOW.tscn", "AntiRogue.tscn"]
 const CMBList:Array = ["RogueECMB.tscn", "RogueECMB.tscn" , "AntirogueECMB.tscn"]
+var Portals:Array = [1,1]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(1,64):

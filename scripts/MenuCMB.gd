@@ -33,7 +33,7 @@ func _on_Attack_pressed():
 		Ready = 0
 		Player.create_arrow()
 		var t = Timer.new()
-		t.set_wait_time(0.5)
+		t.set_wait_time(PlayerVars.ArrowCooldown)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()

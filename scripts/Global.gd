@@ -6,7 +6,7 @@ var Ready = 1
 var rng = RandomNumberGenerator.new()
 var Current_Enemy = 1
 var Enemy_Count = 0
-
+var loading = 0
 
 var Player_Position = Vector2(100,80)
 var Enemy_Position = Vector2(0,0)
@@ -26,6 +26,11 @@ func daze(var NumTurns):
 	Ready = 1
 	t.queue_free()
 	
+	
+func Set_Player_Position(var posit):
+	if (!loading):
+		Player_Position = posit
+
 func Restart():
 	EscapeChance = 80
 	Gold = 0
