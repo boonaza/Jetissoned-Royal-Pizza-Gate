@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 var Current_Enemy = 1
 var Enemy_Count = 0
 var loading = 0
+var CaptivePA = 0
 
 var Player_Position = Vector2(100,80)
 var Enemy_Position = Vector2(0,0)
@@ -37,6 +38,8 @@ func Restart():
 	Ready = 1
 	rng = RandomNumberGenerator.new()
 	Current_Enemy = 1
-
-
+	Enemy_Count = 0
+	CaptivePA = 0
+	loading = 0
 	Player_Position = Vector2(100,80)
+	Enemy_Position = Vector2(0,0)

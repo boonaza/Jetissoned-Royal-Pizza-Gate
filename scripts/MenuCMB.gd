@@ -18,8 +18,10 @@ func _on_Flee_pressed():
 	if (Global.Ready == 1):
 		var EscOdds = randi() % 100 
 		Global.daze(3)
+		Global.CaptivePA = 1
 		PlayAnim.play("FLEE")
 		yield(PlayAnim,"animation_finished")
+		Global.CaptivePA = 0
 		if ((EscOdds >= Global.EscapeChance)):
 			Global.Enemy_Count = 0
 			get_tree().get_root().get_node("Control").returnOverworld(2)

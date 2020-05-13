@@ -20,6 +20,9 @@ var MenuD = preload("res://scenes/MenuDefeat.tscn")
 #	for i in range(eneNum):
 #		find_node("ESpawnPos" + str(i+1)).spawn()
 
+
+#Creates spawners of type EnemyEncountered
+#Randomly creates 1 to 3 of this enemy type
 func init(var EnemyEncountered = EnemyA):
 	eneNum = Global.rng.randi_range(1,3)
 	print(eneNum)
@@ -29,11 +32,15 @@ func init(var EnemyEncountered = EnemyA):
 		find_node("ESpawnPos" + str(i+1)).init(EnemyEncountered.TrueID)
 		find_node("ESpawnPos" + str(i+1)).spawn()
 	
+	
+#If player is defeated, call this menu
 func Defeat():
 	get_child(0).queue_free()
 	add_child(MenuD.instance())
 	
 	
+	
+#Debug spawn additional enemies
 func _unhandled_input(event):
 	if Input.is_action_pressed("DebugSpawn"):
 		for i in range(eneNum):
@@ -41,7 +48,11 @@ func _unhandled_input(event):
 	#if Input.is_action_pressed("DebugZoom"):
 	#	get_node("EncounterCamera").make_current()
 	#	get_node("EncounterCamera").zoom = Vector2(0.1,0.1)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# Enemy deaths decrement Enemy_Count.  When no enemies remain, on the next frame
+# The game spawns a MenuV instance
 func _process(delta):
 	if (Global.Enemy_Count < 1):
 		add_child(MenuV.instance())

@@ -16,7 +16,7 @@ func _unhandled_input(event):
 	if Input.is_action_pressed("ui_accept"):
 		_on_Return_pressed()
 
-
+#Calls the command from encounter to return to the Overworld
 func _on_Return_pressed():
 	Status.kill(Defeated)
 	get_parent().returnOW()

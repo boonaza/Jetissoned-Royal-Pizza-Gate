@@ -11,7 +11,7 @@ func _ready():
 
 func _on_body_enter(body):
 	print("Collision")
-	if true:#Status.Portals[0]:
+	if (Status.Portals[0]):
 		Status.Portals[0] = 0
 		if (body.name == "PlayerOverworld"):
 			Global.Player_Position = plrspawn

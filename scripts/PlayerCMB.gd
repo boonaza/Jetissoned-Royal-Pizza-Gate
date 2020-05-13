@@ -39,7 +39,7 @@ func _physics_process(_delta):
 		motion += Vector2(1, 0)
 		ismoving = 1
 	
-	if (ismoving):
+	if (ismoving && !(Global.CaptivePA)):
 		if((abs(motion.x) < abs(motion.y)) && (motion.y <= 0)):
 			PlayAnim.play("PNorth")
 		if((abs(motion.x) < abs(motion.y)) && (motion.y > 0)):
@@ -50,8 +50,9 @@ func _physics_process(_delta):
 			PlayAnim.play("PWest")
 	
 	
-	if Input.is_action_just_released("north") || Input.is_action_just_released("south") \
-		|| Input.is_action_just_released("west") || Input.is_action_just_released("east"):
+	if (Input.is_action_just_released("north") || Input.is_action_just_released("south") \
+		|| Input.is_action_just_released("west") || Input.is_action_just_released("east")) \
+		&& !(Global.CaptivePA): 
 		
 		PlayAnim.play("PIdle")
 		ismoving = 0
@@ -60,8 +61,9 @@ func _physics_process(_delta):
 
 	move_and_slide(motion)
 	
-	if Input.is_action_just_released("north") || Input.is_action_just_released("south") \
-		|| Input.is_action_just_released("west") || Input.is_action_just_released("east"):
+	if (Input.is_action_just_released("north") || Input.is_action_just_released("south") \
+		|| Input.is_action_just_released("west") || Input.is_action_just_released("east")) \
+		&& !(Global.CaptivePA):
 		
 		PlayAnim.play("PIdle")
 		ismoving = 0

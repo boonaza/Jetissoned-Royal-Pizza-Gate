@@ -12,6 +12,5 @@ script = ExtResource( 1 )
 pause_mode = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="pause_popup" parent="PauseLayer" instance=ExtResource( 3 )]
