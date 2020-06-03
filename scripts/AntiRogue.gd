@@ -8,6 +8,7 @@ var ID = 2
 const TrueID = 2
 var playerfound:bool = false
 var playerC
+var daze = 0
 
 
 func _physics_process(delta):
@@ -19,7 +20,8 @@ func _physics_process(delta):
 	if ColNfo:
 		#MoSp = MoSp.bounce((ColNfo.normal - 0.5*PlayerAngle).normalized())
 		if(ColNfo.collider.name == "PlayerOverworld"):
-			Encounter(ColNfo)
+			if !(PlayerVars.safe):
+				Encounter(ColNfo)
 
 func set_ID(var id):
 	ID = id

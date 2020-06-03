@@ -89,6 +89,7 @@ func returnOverworld(var Victory):
 		if(Victory == 1):
 			CurrentEnemy.queue_free()
 		if (Victory == 2):
+			Global.safeguard()
 			CurrentEnemy.position += Vector2(20,0)
 		if (Victory == 3):
 			main.get_tree().reload_current_scene()  #if defeated, reload game, currently does not properly respawn player

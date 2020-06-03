@@ -43,3 +43,14 @@ func Restart():
 	loading = 0
 	Player_Position = Vector2(100,80)
 	Enemy_Position = Vector2(0,0)
+	
+func safeguard():
+	PlayerVars.safe = 1
+	var ts = Timer.new()
+	ts.set_wait_time(2)
+	ts.set_one_shot(true)
+	self.add_child(ts)
+	ts.start()
+	yield(ts, "timeout")
+	PlayerVars.safe = 0
+	ts.queue_free()

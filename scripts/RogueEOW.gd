@@ -14,7 +14,8 @@ func _physics_process(delta):
 	if ColNfo:
 		MoSp = MoSp.bounce((ColNfo.normal +0.5*PlayerAngle).normalized())
 		if(ColNfo.collider.name == "PlayerOverworld"):
-			Encounter(ColNfo)
+			if !(PlayerVars.safe):
+				Encounter(ColNfo)
 
 func set_ID(var id):
 	ID = id

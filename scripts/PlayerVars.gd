@@ -12,6 +12,7 @@ var Name = "Player1"
 var Motion_Speed_OW = 50
 var ArrowSpeed = 1.5
 var ArrowCooldown = 0.5
+var safe = 0
 
 func changeHP(var dmg):
 	Health += dmg
